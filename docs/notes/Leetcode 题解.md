@@ -1,3 +1,4 @@
+[🍉 点击订阅面试进阶专栏 ](https://xiaozhuanlan.com/CyC2018)
 <!-- GFM-TOC -->
 * [算法思想](#算法思想)
     * [双指针](#双指针)
@@ -256,7 +257,7 @@ Output:
 "apple"
 ```
 
-题目描述：删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最大字符串。
+题目描述：删除 s 中的一些字符，使得它构成字符串列表 d 中的一个字符串，找出能构成的最长字符串。如果有多个相同长度的结果，返回字典序的最小字符串。
 
 ```java
 public String findLongestWord(String s, List<String> d) {
@@ -3049,7 +3050,6 @@ public boolean canPartition(int[] nums) {
     int W = sum / 2;
     boolean[] dp = new boolean[W + 1];
     dp[0] = true;
-    Arrays.sort(nums);
     for (int num : nums) {                 // 0-1 背包一个物品只能用一次
         for (int i = W; i >= num; i--) {   // 从后往前，先计算 dp[i] 再计算 dp[i-num]
             dp[i] = dp[i] || dp[i - num];
@@ -5694,7 +5694,7 @@ Output: 5
 Explanation: The longest harmonious subsequence is [3,2,2,2,3].
 ```
 
-和谐序列中最大数和最小数只差正好为 1，应该注意的是序列的元素不一定是数组的连续元素。
+和谐序列中最大数和最小数之差正好为 1，应该注意的是序列的元素不一定是数组的连续元素。
 
 ```java
 public int findLHS(int[] nums) {
